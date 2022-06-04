@@ -14,15 +14,16 @@ while (true) {
     // Валидация. Цикл покуглил
     let userNumber
 
-    while (isNaN(userNumber)) {
+    do {
         userNumber = window.prompt("Загадайте число. Ну только число ;)");
-    } 
+    }
+    while (isNaN(userNumber) || userNumber === "" ) 
     
     // Нашел что кнопка отмены возвращает null. не понял почему isNaN пропускает null
     if (userNumber === null) {
         break;
     }
-
+    console.log(userNumber);
     // Сравниваем
     if (userNumber == meanNumber) {
         alert("Как вы угадали, в консоль подглядывали?")
